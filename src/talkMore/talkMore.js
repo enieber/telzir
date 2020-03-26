@@ -1,21 +1,21 @@
-const calcTaxMore10PorCent = (min, tax, plamValue) => {
-    if (min > plamValue) {
-        const valueToCalc = min - plamValue
+const calcTaxMore10PorCent = (minutes, tax, plamValue) => {
+    if (minutes > plamValue) {
+        const valueToCalc = minutes - plamValue
         return (valueToCalc * tax)+ (valueToCalc * (tax * 0.1))
     }
     return 0.00
 }
 
-const talkMore = (plam, min, tax) => {
-    switch(plam) {
+const talkMore = (planType, minutes, tax) => {
+    switch(planType) {
         case 'talk-30': {
-            return calcTaxMore10PorCent(min, tax, 30)
+            return calcTaxMore10PorCent(minutes, tax, 30)
         }
         case 'talk-60': {
-            return calcTaxMore10PorCent(min, tax, 60)
+            return calcTaxMore10PorCent(minutes, tax, 60)
         }
         case 'talk-120': {
-            return calcTaxMore10PorCent(min, tax, 120)
+            return calcTaxMore10PorCent(minutes, tax, 120)
         }
     }
 }
